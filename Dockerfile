@@ -24,5 +24,7 @@ EXPOSE ${PORT}
 VOLUME /verdaccio/storage
 COPY --chown=verdaccio ./config/verdaccio.yml ${CONFIG}
 
+USER verdaccio
+
 CMD node -e 'require("fs").writeFileSync("'${CONFIG}'", require("fs").readFileSync("'${CONFIG}'", "utf8").replace(/\$\{([A-Z|_]+)\}/g, (_, x) => process.env[x] || ""))' && \
     verdaccio --config ${CONFIG}

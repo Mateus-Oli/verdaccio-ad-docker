@@ -1,7 +1,7 @@
 storage: /verdaccio/storage
 
 web:
-  enable: ${USER}
+  enable: ${WEB_ENABLE}
   title: ${WEB_TITLE}
 
 auth:
