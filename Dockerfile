@@ -14,8 +14,8 @@ RUN npm i -g verdaccio verdaccio-activedirectory
 
 ENV PORT=4873 \
     CONFIG=/verdaccio/conf/config.yml \
-    BASIC=$authenticated \
-    SCOPED=$authenticated \
+    BASIC=\$authenticated \
+    SCOPED=\$authenticated \
     PROXY=https://registry.npmjs.org \
     WEB_ENABLE=true \
     WEB_TITLE=Verdaccio
